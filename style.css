@@ -1,0 +1,394 @@
+body {
+    background-color: antiquewhite;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+#home,
+#about,
+#contact,
+#skill {
+    display: block;
+}
+
+
+
+
+
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 5vw;
+    height: 5vw;
+    z-index: 100;
+}
+
+
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+} .sidebar-content { 
+    background-color: #ffdf8f;
+    border-radius: 10px;
+    width: 60px;
+    height: 300px;
+    margin-left: -10px;
+} .sidebar li {
+    width: 24px;
+    height: 24px;
+    margin-top: 40px;
+    margin-left: 20px;
+    list-style-type: none;
+    position: relative; /* Add this */
+}
+
+.sidebar li::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: #007bff; /* Change this to your preferred color */
+    transition: width 0.3s ease;
+}
+
+.sidebar li.active::after {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px;
+    height: 60px;
+    background-color: #ffdf8f;
+    border-radius: 0px 0px 24px 24px;
+    z-index: 100;
+    margin-top: -20px;
+} .navbar-content {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+} .navbar-content li {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+} .navbar-content li img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+} .navbar-content li .image-description {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+} .navbar-content li:hover .image-description {
+    opacity: 1;
+}
+
+
+
+.foto {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 550px;
+    height: 550px;
+    z-index: -1;
+    pointer-events: none;
+    margin-top: -15px;
+} .foto svg {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    margin: 0 auto;
+    padding: 100px 20px 0;
+    z-index: 1;
+}
+
+
+
+.home {
+    text-align: left;
+    max-width: 650px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-top: 20px;
+} .univ {
+    color: #a08800;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+} .title {
+    font-family: Ubuntu, sans-serif;
+    font-size: 48px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: 700;
+} .subheadline {
+    font-size: 24px;
+    color: dimgray;
+    line-height: 1.5;
+}
+
+
+
+.about {
+    text-align: left;
+    max-width: 650px;
+    padding: 20px;
+    margin-left: 80px;
+    margin-top: 90px;
+} .button {
+    --color: #00A97F;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+    transform: translateY(20px);
+} .button::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+} .button::before {
+    top: -1em;
+    left: -1em;
+} .button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+} .button:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+} .button:hover {
+    color: rgb(10, 25, 30);
+} .button:active {
+    filter: brightness(.8);
+}
+
+
+
+.contact {
+    text-align: left;
+    max-width: 650px;
+    padding: 20px;
+    margin-left: 80px;
+    margin-top: 15px;
+} .contact-content{
+    font-size: 24px;
+    color: dimgray;
+    line-height: 1.5;
+} .card {
+    display: flex;
+    height: 70px;
+    width: 270px;
+    background-color: antiquewhite;
+    border-radius: 24px;
+    margin-top: 10px;
+    margin-left: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} .card svg {
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+    cursor: pointer;
+} .card .social-link1,.card .social-link2,.card .social-link4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    color: whitesmoke;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+    border-radius: 50px;
+    margin-left: 20px;
+} .card svg {
+    transform: scale(1);
+} .card .social-link1:hover {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    animation: bounce_613 0.4s linear;
+} .card .social-link2:hover {
+    background-color: #000000;
+    animation: bounce_613 0.4s linear;
+} .card .social-link4:hover {
+    background-color: #12a50b;
+    animation: bounce_613 0.4s linear;
+} @keyframes bounce_613 {
+    40% {
+        transform: scale(1.4);
+    }  
+    60% {
+        transform: scale(0.8);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+.skill {
+    display: flex;
+    position: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 700px;
+    width: 1700px;
+    background-color: antiquewhite;
+    margin-left: 0px;
+    margin-top: -200px;
+} .skill-container {
+    display: flex;
+    margin-top: 300px;
+    margin-left: -320px;
+
+} .judul{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: -100px;
+    transform: translateX(px);
+    color: #4e3b0c;
+} .ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    transform: translateX(-130px);
+} .ul li {
+    margin-right: 0px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+    color: rgb(143, 109, 0);
+    font-size: 24px;
+    border-bottom: #ecc800 2px solid;
+}
+
+
+
+.kartu1 {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 990px;
+    position: absolute;
+    top: 15px;
+    left: 200px;
+}
+.kartu {
+    background-color: antiquewhite;
+    box-shadow: 0 12px 12px rgba(255, 174, 0, 0.678);    
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    transform: translateY(300px);
+    margin-left: 20px;
+} .kartu img {
+    width: 100%;
+    height: auto;
+    max-width: 160px;
+    border-radius: 10px;
+} .kartu:hover img {
+    transform: scale(1.1);
+} .kartu .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(250, 235, 215);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+} .kartu:hover .description {
+    transform: translateY(0);
+}
